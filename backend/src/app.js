@@ -113,7 +113,9 @@ app.post('/not', (req, res) => {
     payment
       .search({ qs: filtro })
       .then((res) => {
-        console.log(res.results[res.results.length - 1]);
+        const pagamento = res.results[res.results.length - 1];
+
+        console.log(pagamento.status);
       })
       .catch((err) => console.log(err));
   }, 20000);
