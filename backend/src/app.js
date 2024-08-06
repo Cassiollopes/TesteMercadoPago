@@ -19,7 +19,7 @@ const payment = new Payment(client);
 
 mongoose
   .connect('mongodb://localhost:27017/TestMercadoPago')
-  .then()
+  .then(() => console.log('Conectado com o mongo.'))
   .catch((err) => console.log(err));
 
 const user = new mongoose.Schema({
