@@ -87,7 +87,7 @@ app.post('/payment', async (req, res) => {
         transaction_amount: parseFloat(amount),
         description: description,
         payment_method_id: 'pix',
-        notification_url: 'http://192.241.128.162:8000/not',
+        notification_url: 'http://157.230.81.1/:8000/not',
         payer: {
           email: email,
           identification: {

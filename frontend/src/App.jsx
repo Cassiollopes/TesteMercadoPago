@@ -15,7 +15,7 @@ const App = () => {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post('http://192.241.128.162:8000/payment', { ...form })
+      .post('http://157.230.81.1:8000/payment', { ...form })
       .then((response) => {
         console.log(response.data);
         setLink(response.data.point_of_interaction.transaction_data.ticket_url);
