@@ -18,7 +18,7 @@ const client = new MercadoPagoConfig({
 const payment = new Payment(client);
 
 mongoose
-  .connect('mongodb://localhost:27017/guiapics')
+  .connect('mongodb://localhost:27017/TestMercadoPago')
   .then()
   .catch((err) => console.log(err));
 
