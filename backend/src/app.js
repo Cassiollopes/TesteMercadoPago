@@ -87,7 +87,7 @@ app.post('/payment', async (req, res) => {
         transaction_amount: parseFloat(amount),
         description: description,
         payment_method_id: 'pix',
-        notification_url: 'http://157.230.81.1/:8000/not',
+        notification_url: 'http://157.230.81.1:8000/not',
         payer: {
           email: email,
           identification: {
@@ -112,7 +112,13 @@ app.post('/not', (req, res) => {
 
     payment
       .search({ qs: filtro })
-      .then((res) => console.log(res))
+      .then((res) => {
+        const pagamento = res.body.results[0]
+
+        if(!pagamento) return console.log('Pagamento inexistente!')
+
+        console.log(pagamento.status)
+      })
       .catch((err) => console.log(err));
   }, 20000);
 
