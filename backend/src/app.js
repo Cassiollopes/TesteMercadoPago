@@ -115,7 +115,7 @@ app.post('/not', (req, res) => {
       .then((res) => {
         const pagamento = res.body.results[0]
 
-        if(!pagamento) return console.log('Pagamento inexistente.')
+        if(!pagamento) return console.log('Pagamento inexistente!')
 
         console.log(pagamento.status)
       })
