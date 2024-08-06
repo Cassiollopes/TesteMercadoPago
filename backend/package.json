@@ -1,0 +1,25 @@
+{
+  "name": "projeto-9",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon ./src/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@types/jest": "^29.5.12",
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "mercadopago": "^2.0.11",
+    "mongoose": "^8.5.2",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0"
+  }
+}
