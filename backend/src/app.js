@@ -103,7 +103,19 @@ app.post('/payment', async (req, res) => {
 });
 
 app.post('/not', (req, res) => {
-  console.log(req.query);
+  const id = req.query.id;
+
+  setTimeout(() => {
+    const filtro = {
+      'order.id': id,
+    };
+
+    payment
+      .search({ qs: filtro })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  }, 20000);
+
   res.send('Ok');
 });
 
