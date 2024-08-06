@@ -113,7 +113,7 @@ app.post('/not', (req, res) => {
     payment
       .search({ qs: filtro })
       .then((res) => {
-        const pagamento = res.body.results[0]
+        const pagamento = res.results[0]
 
         if(!pagamento) return console.log('Pagamento inexistente!')
 
