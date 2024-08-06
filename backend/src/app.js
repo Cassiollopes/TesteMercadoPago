@@ -79,8 +79,7 @@ app.post('/login', async (req, res) => {
 });
 
 app.post('/payment', async (req, res) => {
-
-  const { email, cpf, amount, description } = req.body
+  const { email, cpf, amount, description } = req.body;
 
   payment
     .create({
@@ -88,7 +87,7 @@ app.post('/payment', async (req, res) => {
         transaction_amount: parseFloat(amount),
         description: description,
         payment_method_id: 'pix',
-        notification_url: 'http://165.22.177.121:8000/',
+        notification_url: 'http://192.241.128.162:8000/not',
         payer: {
           email: email,
           identification: {
@@ -101,6 +100,11 @@ app.post('/payment', async (req, res) => {
     })
     .then((result) => res.send(result))
     .catch((error) => res.send(error));
+});
+
+app.post('/not', (req, res) => {
+  console.log(req.query);
+  res.send('Ok');
 });
 
 module.exports = app;

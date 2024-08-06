@@ -15,11 +15,11 @@ const App = () => {
   const submit = (e) => {
     e.preventDefault();
     axios
-      .post('http://localhost:8000/payment', {...form})
+      .post('http://192.241.128.162:8000/payment', { ...form })
       .then((response) => {
-        console.log(response.data)
+        console.log(response.data);
         setLink(response.data.point_of_interaction.transaction_data.ticket_url);
-        setForm(formNull)
+        setForm(formNull);
       })
       .catch((err) => console.log(err));
   };
