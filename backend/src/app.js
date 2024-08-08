@@ -103,6 +103,7 @@ app.post('/payment', async (req, res) => {
 });
 
 app.post('/not', (req, res) => {
+  console.log(req.query)
   const id = req.query.id;
 
   setTimeout(() => {
